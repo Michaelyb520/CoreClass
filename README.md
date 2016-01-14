@@ -1,878 +1,793 @@
 
+![image](https://github.com/CharlinFeng/Resource/blob/master/CoreModel/logo.jpg)<br/><br/>
 
-![image](https://github.com/nsdictionary/CoreFMDB/blob/master/CoreFMDB/2.png)<br />
 
 
-
-    Charlin出框架的目标：简单、易用、实用、高度封装、绝对解耦！
-
-<br /><br />
-
-#### 本框架版权归成都冯成林所有！拒绝抄袭！请支持原创！
-#### 重磅推出：Swift版的MJExtension，运行时、反射与一键字典模型互转
-文档：https://github.com/nsdictionary/CFRuntime
-
-<br /><br />
-
-![image](./CoreClass/tip.png)<br />
-
-<br /><br />
-
-
-
-框架截图 ，你真的要先认真看看文档 CUT
-===============
-![image](./CoreClass/show.gif)<br />
-
-
-# CoreClass
-    【CoreModel】MJExtension续作之三：一键ORM,全自动CURD，是时候抛弃Core Data了！！！
-    
-
-<br /><br />
-
-
-
-
-CoreModel系列： 请看！！！  SERIES
-===============
-
-
-第一季：CoreFMDB
-https://github.com/nsdictionary/CoreFMDB
-
-第二季：CoreArchive
-https://github.com/nsdictionary/CoreArchive
-
-第三季：CoreClass
-https://github.com/nsdictionary/CoreClass
-
-第四季：CoreModel模型动态缓存、列表模型动态缓存。<br />
-暂未开源！请加群归队，获取最新信息（群信息在下面）！！！请支持第三季！
-
-第五季：动态缓存list终结者。<br />
-暂未开源！请加群归队，获取最新信息（群信息在下面）！！！请支持第三季！
-
-<br /><br /><br />
-本框架是隶属于MJExtension续作，我给这系列框架取了一个整体上的名字叫做：CoreModel。
-CoreClass是系列第三季，共有5季，还有最后两季！连载中，请加群关注最新动态！<br />
-
-
-<br /><br />
-
-
-
-
-组织信息 Charlin Feng：
-===============
-<br />
-#### 特别群：请西部省市朋友实名加入组织。其他地区朋友请添加2-4群：谢谢。
-<br />
-【西部区域】西部大开发群号： 473185026  -追赶北上广！为振兴西部IT而努力！<br />
-热烈欢迎中国西部各省市的从事iOS开发朋友实名进群！本群为是聚集西部零散开发者，大家齐心协力共进退！ <br /><br />
-
-【全国可加】四群： 347446259<br />
-新开，可加！欢迎全国朋友加入组织 <br /><br />
-
-【全国可加】三群： 474377358<br />
-新开，可加！欢迎全国朋友加入组织 <br /><br />
-
-【全国可加】二群： 369870753<br />
-**WORNING: 已爆满，加不上了**<br /><br />
-
-【全国可加】一群：163865401<br />
-**WORNING: 已爆满，加不上了**<br /><br />
-
-<br /><br />
-开源说明：（必看！！！！） YOU MUST SEE IT
-===============
-请支持开源，勿辜负开源精神！！！
-此原创框架系列（共有5季）算是是本人几年的精华所在，现在免费开源给大家，目前承诺给大家开源到了第三季。
-后续还有两季：<br />
->.CoreModel模型动态缓存<br />
->.列表模型动态缓存.<br />
->.动态缓存list终结者.
-
-<br />
-免费开源最后两季之前，我希望本框架能够得到大家足够的支持：<br />
-
------
-####请帮助本框架star数量到1000以上<br />
-
-----------
-
-没有金钱利益！但star框架，是您支持我、认可我的唯一方式，希望大家支持我！！！！！！！！谢谢！！！！！
-
-<br /><br /><br />
-
-Charlin Feng开源： OPEN SOURCE
-===============
-由于本人做过LAMP开发，之前一直是使用ThinkPHP开发，受ThinkPHP的数据库操作影响非常深远，如果你了解ThinkPHP，
-你会发现本框架和ThinkPHP的数据库操作太相似了！
-此框架已经存在几年了，实际年龄应该和MJExtension差不多，只是今天开源而已，
-期间经历了6-8个版本的大更新，也经历了本人7个企业级项目的考验与磨砺，最终呈现在您眼前的算是一个比较成熟的版本。
-<br /><br /><br />
-
-
-
-框架说明：EXPLAIN
-===============
-1.这是什么框架？<br/>
-本框架是类似java里面的Hibernate。基于FMDB，扩展MJextension，并立志取代Core Data的一个原创框架！<br/><br/>
-2.这个框架能做什么？<br/>
-一键ORM，什么？不知道什么ORM？简单说就是，数据库操作，从此你不需要再写一句sql啦！是不是很棒！<br/><br/>
-
-
-本作是CoreModel系列第三作，是整个系列真正核心价值所在，也是真正点题MJExtension续作的地方。其复杂度与框架深度绝不比MJExtension低。
-
-
-<br /><br /><br />
-
-
-
-
-框架功能：FUNCTIONS
-===============
-本框架重点目标是实现ORM映射，并完成全自动CURD，并完成多表级联操作，从此您不再需要写一句sql！！！！数据持久化从此可以抛弃Core Data!!!!
-<br /><br /><br />
-
-特别强调：（必看！） STRESS
-===============
-一、凭什么口出狂言要取代Core Data?<br />
-特别强调：本框架作为MJExtension的续作，重点在于处理网络服务器数据的本地解析与持久化，很多朋友说是否支持数据迁移？是否支持事务？锁表？<br />
-统一回答：本框架的核心目的再一次强调，是解决ORM映射，一键CURD以及多表级联操作。真正要实现一个数据库所有功能并不是我想要的，
-我和大家一样，每次请求网络服务器数据，就想简单的安安静静的做个缓存，以便CURD而已。这也是我做这个框架的初衷。至少对于我来说，我目前几年使用Core Model后从未使用Core Data，对于我来说，算是取代了Core Data。这个问题见仁见智。<br />
-
-二、为什么需要依赖很多框架？<br />
-如果你了解我的框架多了，你就明白。这也是我多年的经验。简单说就两个字：解耦。如果你没有洁癖或者强迫症请自行忽略此段<br />
-
-
-三、为什么框架叫CoreClass?<br />
-还是因为解耦与框架模块化，准备说本框架的核心叫BaseModel,而CoreClass里面含有若干BaseClass，BaseModel作为其中一个子集和
-其他BaseClass是平等共存在CoreClass的。<br />
-
-<br /><br /><br />
-
-关于Swift：ABOUT SWIFT
-===============
-此框架已经为swift做了大量兼容，不过可惜的是runtime机制以及oc的很多特性在swift中做了变更，简单说就是MJExtension在
-swift中已经无法正常使用。以下是MJ本人对swift版本的说明：<br />
->.MJ：不建议在Swift中使用MJExtension了哈，MJRefresh还可以用，因为Swift和OC中有些函数的用法完全不一样。我尽快推出Swift版本的MJExtension.<br />
->.MJ：Swift对NSClassFromString的支持跟OC不一致导致的。。。看来要写个Swift版本的MJExtension了.<br />
-
-#####不过不要担心，我目前项目是swift项目，需要使用MJExtension以及CoreModel还是可以的，只要让框架活在oc的世界就行了。
-<br /><br /><br />
-
-
-
-
-
-
-框架依赖：DEPENDENCE
-===============
-.CoreStatus<br />
-.MJExtension<br />
-.CoreCategory<br />
-.CoreArchive<br />
-.CoreHttp<br />
-.CoreFMDB<br />
-<br /><br />
-
-
-正式开源 Let's Go!!!
-===============
-下面请跟随Charlin Feng来一起实现ORM，我会用一个过程来向大家展示这个框架的使用流程，这个流程也是我当时写框架的功能方向走势。
-注：本框架有一套理论，就像Core Data需要建立模型表关联，RAC中的sinal机制一样，本框架一样有一些理论需要大家首页要明确！
-
-### 基本理论：
-1.想要完成全自动CURD,请继承BaseModel.<br />
-2.BaseModel是MJExtension的续作，解决的是服务器数据的后续处理，并不是处理你本地自定义的一个非常数据结构复杂的模型。如含有以下成员类型的属性：NSData、UIImage、结构体、上下文等。如果实在有传结构体的，请以为字符串的形式保存。<br /><br />
-3.模型有一个字段必须有值:hostID,此属性是服务器数据库的id字段生成，框架已经自动将服务器的数据id对应映射为hostID。
-本地sqlite有本地的id字段。<br /><br />
-4.根据网络数据处理原则：服务器数据和本地缓存数据对比来说，服务器数据最可靠可信，因此，你使用baseModel解析网络数据，请确保接口一定要传服务器id字段给你，且本框架只信任服务器id即模型的hostID。本地数据库的id仅仅是为了符合数据库3NF而存在。<br /><br />
-5.根据多年经验来说，同时参考MVVM设计模式：所有网络请求放在模型内部完成最好，BaseModel完成了所有的数据统一性：网络请求，本地数据缓存请求。关于数据统一请求性同样有一套理论，并在CoreModel第四季做详细说明。此处先行略过。<br /><br />
-
-<br /><br />
-### 开始实战：
-开始之前，如果你发现了30个错误，请确定你导入了sqlite3的lib库文件：
-<br />
-#### 1.新建一个类User：注意请继承自BaseModel
-
-    注：此类是一个基本类，成员属性含有各种数据类型，但不含有自定义对象  
-
-        #import "BaseModel.h"
-        #import <UIKit/UIKit.h>
-        
-        @interface User : BaseModel
-        
-        /** 用户名：字符串 */
-        @property (nonatomic,copy) NSString *userName;
-        
-        /** 级别：整型 */
-        @property (nonatomic,assign) NSUInteger level;
-        
-        /** 账户余额：浮点 */
-        @property (nonatomic,assign) CGFloat accountMoney;
-        
-        
-        @end
-
-
-    好了，先不说这么多，我们先用一个这个模型，第一次使用模型类会自动触发很多事情，请拭目以待！
-    
-    请注意：我们现在还基本没有做任何事情哦？
-    
-    在控制器执行以下代码，并随便调用User类的任一方法：
-    
-        - (void)viewDidLoad {
-        [super viewDidLoad];
-        
-        //测试用户模型
-        [self userTest];
-    
-        }
-        /** 测试用户模型 */
-        -(void)userTest{
-            
-            //随便调用User类的任一方法，这里直接创建一个User对象
-            User *user = [[User alloc] init];
-        }
-
-
-好了，现在请查看控制台有以下输出：
-
-      2015-07-02 15:15:51.153 CoreClass[4727:607] dbPath:/Users/Charlin/Library/Developer/CoreSimulator/Devices/E1B1C2D8-DC98-4571-AF45-8A6D76F07497/data/Applications/1DD11CA9-E785-4C5D-88D2-3E0E1648462C/Documents/CoreClass/CoreClass.sql
-        2015-07-02 15:15:51.235 CoreClass[4727:607] 表创建完毕<NSThread: 0x7b72f3e0>{name = (null), num = 1}
-        2015-07-02 15:15:51.235 CoreClass[4727:607] 字段也检查完毕<NSThread: 0x7b72f3e0>{name = (null), num = 1}
-
-我们使用navicat打开控制台输入的sql文件查看发生了什么奇迹？
-
-            sqlite> PRAGMA table_info (User);
-            +------+--------------+---------+---------+------------+------+
-            | cid  | name         | type    | notnull | dflt_value | pk   |
-            +------+--------------+---------+---------+------------+------+
-            | 0    | id           | INTEGER | 1       | 0          | 1    |
-            | 1    | userName     | TEXT    | 1       | ''         | 0    |
-            | 2    | level        | INTEGER | 1       | 0          | 0    |
-            | 3    | accountMoney | REAL    | 1       | 0.0        | 0    |
-            | 4    | hostID       | INTEGER | 1       | 0          | 0    |
-            | 5    | pModel       | TEXT    | 1       | ''         | 0    |
-            | 6    | pid          | INTEGER | 1       | 0          | 0    |
-            +------+--------------+---------+---------+------------+------+
-
-已经神奇的为您创建了表，而且你输入的字段已经全部在表里面了！是不是很方便？
-
-<br />
-#### 2.字段自增：
-
-下面来这个需求，当你表已经自动创建好，好开心！
-
-产品狗突然说：“不好意思，我们要加个vip的字段！！！”
-
-你：“。。。。。。。，什么？？？？fuck！！！。。。”
-
-之前我在华西做一款应用叫爱哟的时候，就发生了上面这真实的一幕！！！好吧，哥受够产品狗了，我已经考虑了这个情况，先在你的模型里面添加一个字段吧，添加完后是这个样子的：
-
-    注：请注意最后一个新加的字段：isVip
-        
-        #import "BaseModel.h"
-        #import <UIKit/UIKit.h>
-        
-        @interface User : BaseModel
-        
-        /** 用户名 */
-        @property (nonatomic,copy) NSString *userName;
-        
-        /** 级别 */
-        @property (nonatomic,assign) NSUInteger level;
-        
-        /** 账户余额 */
-        @property (nonatomic,assign) CGFloat accountMoney;
-        
-        /** 是否是vip：产品狗新加 */
-        @property (nonatomic,assign) BOOL isVip;
-        
-        
-        @end
-
-
-我们就加了一个字段而已，二话不说，再运行一下项目，看看是不是有奇迹？？？？
-
-请注意查看控制台输入：
-
-        2015-07-02 15:35:26.348 CoreClass[4803:607] dbPath:/Users/Charlin/Library/Developer/CoreSimulator/Devices/E1B1C2D8-DC98-4571-AF45-8A6D76F07497/data/Applications/1DD11CA9-E785-4C5D-88D2-3E0E1648462C/Documents/CoreClass/CoreClass.sql
-        2015-07-02 15:35:26.350 CoreClass[4803:607] 表创建完毕<NSThread: 0x7a034340>{name = (null), num = 1}
-        2015-07-02 15:35:26.351 CoreClass[4803:607] 字段也检查完毕<NSThread: 0x7a034340>{name = (null), num = 1}
-        2015-07-02 15:35:26.353 CoreClass[4803:607] 注意：模型 User 有新增加的字段 isVip,已经实时添加到数据库中！
-
-
-再次打开navicat，或者终端查看表结构：
-
-请注意最后一个字段：isVip：
-
-    sqlite> PRAGMA table_info (User);
-    +------+--------------+---------+---------+------------+------+
-    | cid  | name         | type    | notnull | dflt_value | pk   |
-    +------+--------------+---------+---------+------------+------+
-    | 0    | id           | INTEGER | 1       | 0          | 1    |
-    | 1    | userName     | TEXT    | 1       | ''         | 0    |
-    | 2    | level        | INTEGER | 1       | 0          | 0    |
-    | 3    | accountMoney | REAL    | 1       | 0.0        | 0    |
-    | 4    | hostID       | INTEGER | 1       | 0          | 0    |
-    | 5    | pModel       | TEXT    | 1       | ''         | 0    |
-    | 6    | pid          | INTEGER | 1       | 0          | 0    |
-    | 7    | isVip        | INTEGER | 1       | 0          | 0    |
-    +------+--------------+---------+---------+------------+------+
-    8 rows in set (0.01 sec)
-
-是不是很轻松？你还什么都没动呢？另急，还有更强大的后面！！！！
-
-
-<br />
-#### 3.一键CURD之插入：一键CURD请全部使用类方法完成！ insert
-
-保存模型，请注意一定要有hostID，原因请查看前面的说明！！！！非常重要。
-
-        User *user = [[User alloc] init];
-        
-        //模拟服务器ID
-        user.hostID = 1;
-        user.userName = @"张三";
-        user.level = 99;
-        user.accountMoney = 1200.0f;
-        user.isVip = YES;
-        
-        //上面是模拟数据，真实使用是MJExtension解析服务器数据
-        
-        //一键CURD：保存
-        BOOL res = [User insert:user];
-        
-        if(res){
-            NSLog(@"保存成功");
-        }else{
-            NSLog(@"保存失败");
-        }
-    
-    
-此时，控制台有以下输出：
-
-    2015-07-02 15:43:34.822 CoreClass[4850:607] 表创建完毕<NSThread: 0x79f59e50>{name = (null), num = 1}
-    2015-07-02 15:43:34.823 CoreClass[4850:607] 字段也检查完毕<NSThread: 0x79f59e50>{name = (null), num = 1}
-    2015-07-02 15:43:34.823 CoreClass[4850:607] 数据插入开始<NSThread: 0x79f59e50>{name = (null), num = 1}
-    2015-07-02 15:43:34.824 CoreClass[4850:607] 查询开始：<NSThread: 0x79f59e50>{name = (null), num = 1}
-    2015-07-02 15:43:34.824 CoreClass[4850:607] 查询完成：<NSThread: 0x79f59e50>{name = (null), num = 1}
-    2015-07-02 15:43:34.826 CoreClass[4850:607] 数据插入结束<NSThread: 0x79f59e50>{name = (null), num = 1}
-    2015-07-02 15:43:34.826 CoreClass[4850:607] 插入成功
-
-一切保存已经完成啦，看看数据库里面有没有？
-
-        sqlite> select * from User;
-        +----+----------+-------+--------------+--------+--------+-----+-------+
-        | id | userName | level | accountMoney | hostID | pModel | pid | isVip |
-        +----+----------+-------+--------------+--------+--------+-----+-------+
-        | 1  | 张三   | 99    | 1200.0       | 1      |        | 0   | 1     |
-        +----+----------+-------+--------------+--------+--------+-----+-------+
-        1 rows in set (0.12 sec)
-
-
-<br />
-#### 4.一键CURD之修改：请注意修改对应数据的唯一标准是hostID，请注意你hostID的一致性！ update
-
- 我们先修改数据内容：
- 
-        User *user = [[User alloc] init];
-        //模拟服务器数据变更
-        user.hostID = 1;
-        user.userName = @"张三";
-        user.level = 0;
-        user.accountMoney = 10.0f;
-        user.isVip = NO;
-        
-        //一键CURD：保存
-        BOOL res = [User update:user];
-        
-        if(res){
-            NSLog(@"修改成功");
-        }else{
-            NSLog(@"修改失败");
-        }
-
-查看控制台输出：
-
-    2015-07-02 16:23:56.560 CoreClass[5486:607] 表创建完毕<NSThread: 0x7b657f80>{name = (null), num = 1}
-    2015-07-02 16:23:56.561 CoreClass[5486:607] 字段也检查完毕<NSThread: 0x7b657f80>{name = (null), num = 1}
-    2015-07-02 16:23:56.562 CoreClass[5486:607] 查询开始：<NSThread: 0x7b657f80>{name = (null), num = 1}
-    2015-07-02 16:23:56.562 CoreClass[5486:607] 查询完成：<NSThread: 0x7b657f80>{name = (null), num = 1}
-    2015-07-02 16:23:56.563 CoreClass[5486:607] 现在是更新
-    2015-07-02 16:23:56.563 CoreClass[5486:607] 查询开始：<NSThread: 0x7b657f80>{name = (null), num = 1}
-    2015-07-02 16:23:56.563 CoreClass[5486:607] 查询完成：<NSThread: 0x7b657f80>{name = (null), num = 1}
-    2015-07-02 16:23:56.565 CoreClass[5486:607] 修改成功
-
-数据已经修改成功，我们查看数据库：
-
-    sqlite> select id,userName,level,accountMoney,hostID,isVip from User;
-    +----+----------+-------+--------------+--------+-------+
-    | id | userName | level | accountMoney | hostID | isVip |
-    +----+----------+-------+--------------+--------+-------+
-    | 1  | 张三   | 0     | 10.0         | 1      | 0     |
-    +----+----------+-------+--------------+--------+-------+
-    1 rows in set (0.00 sec)
-
-
-<br />
-#### 4.一键CURD之删除：delete
-
-根据hostID快速删除一条记录，还是那句话，hostID是一切的核心！
-
-        User *user = [[User alloc] init];
-        
-        //模拟服务器数据变更
-        user.hostID = 1;
-        
-        //一键CURD：删除
-        /**
-         *  根据hostID快速删除一条记录
-         *
-         *  @param hostID hostID
-         *
-         *  @return 执行结果
-         */
-        BOOL res = [User delete:user.hostID];
-        
-        if(res){
-            NSLog(@"删除成功");
-        }else{
-            NSLog(@"删除失败");
-        }
-
-查看控制台输出：
-
-    2015-07-02 16:30:02.220 CoreClass[5538:607] 表创建完毕<NSThread: 0x7a9742a0>{name = (null), num = 1}
-    2015-07-02 16:30:02.220 CoreClass[5538:607] 字段也检查完毕<NSThread: 0x7a9742a0>{name = (null), num = 1}
-    2015-07-02 16:30:02.221 CoreClass[5538:607] 查询开始：<NSThread: 0x7a9742a0>{name = (null), num = 1}
-    2015-07-02 16:30:02.221 CoreClass[5538:607] 查询完成：<NSThread: 0x7a9742a0>{name = (null), num = 1}
-    2015-07-02 16:30:02.223 CoreClass[5538:607] 删除成功
-
-再看看数据库表：
-
-    sqlite> select id,userName,level,accountMoney,hostID,isVip from User;
-    Empty set (0.00 sec)
-    
-可见，根据hostID已经成功删除了数据。
-
-<br />
-#### 5.一键CURD之保存：save
-先说下为什么有这个方法，这个方法是ThinkPHP里面有的，这个方法是这样的，save一个模型，如果这个模型在数据库中不存在，就执行insert
-，如果这个模型应该在数据库中存在，就执行update操作。总之，这个方法之后，这个模型一定会存在数据库中。
-
-现在就来更新一个模型，由于我不确定本地是否有这个数据，但我一定要存，所以我就直接save
-
-        User *user = [[User alloc] init];
-        
-        //模拟服务器数据变更
-        user.hostID = 1;
-        user.userName = @"李四";
-        user.level = 30;
-        user.accountMoney = 80.0f;
-        user.isVip = NO;
-        
-        
-        
-        //一键CURD：保存
-        BOOL res = [User save:user];
-        
-        if(res){
-            NSLog(@"修改成功");
-        }else{
-            NSLog(@"修改失败");
-        }
-        
-控制器有如下输出：
-
-        2015-07-02 16:39:59.933 CoreClass[5639:607] 查询开始：<NSThread: 0x7b8619f0>{name = (null), num = 1}
-        2015-07-02 16:39:59.934 CoreClass[5639:607] 查询完成：<NSThread: 0x7b8619f0>{name = (null), num = 1}
-        2015-07-02 16:39:59.934 CoreClass[5639:607] 现在是更新
-        2015-07-02 16:39:59.935 CoreClass[5639:607] 查询开始：<NSThread: 0x7b8619f0>{name = (null), num = 1}
-        2015-07-02 16:39:59.935 CoreClass[5639:607] 查询完成：<NSThread: 0x7b8619f0>{name = (null), num = 1}
-        2015-07-02 16:39:59.937 CoreClass[5639:607] 修改成功
-
-查看数据库结果：
-
-        sqlite> select id,userName,level,accountMoney,hostID,isVip from User;
-        +----+----------+-------+--------------+--------+-------+
-        | id | userName | level | accountMoney | hostID | isVip |
-        +----+----------+-------+--------------+--------+-------+
-        | 2  | 李四   | 30    | 80.0         | 1      | 0     |
-        +----+----------+-------+--------------+--------+-------+
-        1 rows in set (0.01 sec)
-
-
-<br />
-#### 6.一键CURD之数组批量操作：批量插入
-
-        //一键CURD：批量插入
-         BOOL res = [User inserts:@[user1,user2]];
-
-<br />
-#### 7.一键CURD之数组批量操作：批量保存
-
-        //一键CURD：批量插入
-        BOOL res = [User saveModels:@[user1,user2]];
-
-<br />
-
-
-#### 8.一键CURD之数组批量操作：模糊保存
-如果你要保存模型，但不确定这是单个模型还是一个模型数组，可模糊保存
-
-        //一键CURD：模糊保存
-        BOOL res = [User saveDirect:@[user1,user2]];
+<br/><br/><br/>
+一、CoreModel使用前言
+==========
 
 <br/>
-#### 9.【更新】一键CURD之读取：select
-为了能够很好的查看结果，我们重写了User类的description方法如下：
+#### 1.为什么要重制？
+在推出了[CoreFMDB](https://github.com/CharlinFeng/CoreFMDB)和[CoreArchive](https://github.com/CharlinFeng/CoreArchive)之后，感谢大量朋友对我的框架的喜欢，同时也提出了各种问题和要求，最重要的有以下：<br/>
+> (1). 不支持NSData。<br/>
+> (2). 不支持NSArray。<br/>
+> (3). 全部主线程操作，对性能有一定的影响。<br/>
 
-        /** 描述 */
-        -(NSString *)description{
-            return [NSString stringWithFormat:@"userName=%@,level=%@,accountMoney=%@,isVip=%@",self.userName,@(self.level),@(self.accountMoney),@(self.isVip)];
-        }
+<br/>
+#### 2.框架依赖
+> (1). CoreFMDB 数据库操作。<br/>
+> (2). CoreHttp 网络请求：第四季及第五季用到。<br/>
+> (3). CoreStatus 网络状态检测：第四季及第五季用到。<br/>
+> (4). MJExtension 整个框架仅仅用了他的遍历成员属性这唯一的一个功能，别无他用。<br/>
 
-好了，我们现在来查询数据吧
-我们在控制器中，直接查询刚刚的数据
 
-            NSArray *users = [User selectWhere:@"userName='张三'" groupBy:nil orderBy:nil limit:nil];
-             NSLog(@"%@",users);
+<br/>
+#### 3.其他说明（持续关注[信息公告牌](https://github.com/CharlinFeng/Show)）
+> (1). 强烈建议关注：`信息公告牌`以便获取最实时的框架更新动态。<br/>
+> (2). 开源第四季动态缓存的条件为：`CoreModel的Star数据超过1000`。<br/>
+> (3). 之前有朋友过于喜欢我的框架，导致在没有任何说明的情况下借用我的代码，所以本次框架去除了所有的中文注释。从使用的角度上来说对您没有任何影响。<br/>
+> (4). 请添加异常断点，以便捕获我提供的大量断言。<br/>
+> (5). 特别提醒：示例程序有强烈的先后顺序，最好不要随便乱点，比如一个数据都没有insert，你点击了update或者delete等操作会达到你难以理解的结果。<br/>
 
-如果你用过ThinkPHP,你会觉得这个方法怎么这么亲切？返回结果是数组这个非常好理解，这是一个结果集：
-我们看看控制台输出了什么？
 
-    2015-07-03 15:21:32.863 CoreClass[4215:607] 表创建完毕<NSThread: 0x7b17bd00>{name = (null), num = 1}
-    2015-07-03 15:21:32.864 CoreClass[4215:607] 字段也检查完毕<NSThread: 0x7b17bd00>{name = (null), num = 1}
-    2015-07-03 15:21:32.864 CoreClass[4215:607] 查询开始：<NSThread: 0x7b17bd00>{name = (null), num = 1}
-    2015-07-03 15:21:32.865 CoreClass[4215:607] 查询完成：<NSThread: 0x7b17bd00>{name = (null), num = 1}
-    2015-07-03 15:21:32.865 CoreClass[4215:607] (
-        "userName=\U5f20\U4e09,level=30,accountMoney=80,isVip=0"
+
+<br/>
+#### 4.最终申明
+在开始之前，请您注意以下几点：<br/>
+>(1). 导入了sqlite3.lib 动态库。<br/>
+>(2). 拖拽CoreModel及FrameWorks文件夹到您的项目。<br/>
+>(3). 安装了Navicat Preminum。<br/>
+>(4). Swift使用，不能Swift中的Model继承CoreModel，主要是因为MJExtension在Swift中无法正常工作，模型一律是OC，使用Swift再使用OC中的CoreModel的子类。
+
+<br/><br/><br/>
+二、基本使用
+==========
+<br/>
+####新建模型Person，继承自CoreModel，模型加入以下属性：
+
+    #import "CoreModel.h"
+    
+    @interface Person : CoreModel
+    
+    @property (nonatomic,copy) NSString *name;
+    
+    @property (nonatomic,assign) NSInteger age;
+    
+    @end
+
+
+<br/><br/><br/>
+三、全自动创表
+==========
+<br/>
+#### 框架全自动创表触发的条件：调用CoreModel子类的任意一个方法。
+##### 本功能请参考项目中：Test2VC.m
+现在，我们随意调用Person的任意一个方法，这里我们以实例化一个Person实例说明：
+
+    /** 全自动创表 */
+    Person *person = [[Person alloc] init];
+
+,查看控制台输出，已经发现成功创建了数据库，成功创建表，并写入了字段信息：
+
+        sqlite> PRAGMA table_info (Person);
+        +------+--------+---------+---------+------------+------+
+        | cid  | name   | type    | notnull | dflt_value | pk   |
+        +------+--------+---------+---------+------------+------+
+        | 0    | id     | INTEGER | 1       | 0          | 1    |
+        | 1    | name   | TEXT    | 1       | ''         | 0    |
+        | 2    | age    | INTEGER | 1       | 0          | 0    |
+        | 3    | hostID | INTEGER | 1       | 0          | 0    |
+        | 4    | pModel | TEXT    | 1       | ''         | 0    |
+        | 5    | pid    | INTEGER | 1       | 0          | 0    |
+        +------+--------+---------+---------+------------+------+
+        6 rows in set (0.02 sec)
+
+说明：<br/>
+>(1). 框架在控制台输出的第一条信息就是您的DB位置：dbPath:path.sql，请注意因为iOS沙盒机制有变化，这个Path会不停的变化，你使用Navicat Preminum查看数据库文件的时候，最好是每次都更新path（在数据库连接上右键，修改当前DB的path）。<br/>
+>(2). 有您不熟悉的字段如pid,pModel是框架辅助字段，请不要删除。<br/>
+>(3). 核心字段：hostID是服务器主键，任何使用CoreModel的模型必须拥有唯一的hostID，如果您没有hostID，请构建。<br/>
+
+
+
+<br/><br/><br/>
+四、调试模式与非调试模式
+==========
+<br/>
+#### 框架有极其全面的Debug信息与断言帮助您正确的使用CoreModel
+##### 如果您不喜欢控制台大量输出Debug信息，请到CoreModelConst.h文件，修改以下宏定义：
+
+    /** Debug */
+    #define CoreModelDeBug 1
+
+，如果您修改为1，即是Debug模式，控制台会有大量输出，如果您不需要显示，改为0即可。
+
+
+<br/><br/><br/>
+五、全部子线程运行 + Block回调，性能卓越！
+==========
+<br/>
+#### 我们还是打开Debug模式，请查看控制台各种关于线程的输入.<br/>
+##### 不仅仅是创建是这样，后面所有关于数据库的CURD操作，全部是在子线程中完成的，基本Operation，同时有并发限制，多线程在本框架得到完美展现，性能不再是问题！<br/>
+
+    2015-09-09 10:58:44.291 CoreModel[3427:3903] dbPath:/Users/Charlin/Library/Developer/CoreSimulator/Devices/E1B1C2D8-DC98-4571-AF45-8A6D76F07497/data/Applications/9174CFF6-3EA1-4BDB-904C-C5373E0E00E0/Documents/CoreModel/CoreModel.sql
+    2015-09-09 10:58:44.293 CoreModel[3427:3903] 表创建完毕<NSThread: 0x7a679c80>{name = (null), num = 2}
+    2015-09-09 10:58:44.293 CoreModel[3427:3903] 字段检查所在线程：<NSThread: 0x7a679c80>{name = (null), num = 2}
+    2015-09-09 10:58:44.294 CoreModel[3427:3903] 字段也检查完毕<NSThread: 0x7a679c80>{name = (null), num = 2}
+    2015-09-09 10:58:44.294 CoreModel[3427:3903] 创表所在线程：<NSThread: 0x7a679c80>{name = (null), num = 2}
+
+#### 注意：因为是子线程，所以您的block回调，全部是子线程，如果你在block里面更新UI，或者Push界面，需要自行回到主线程。你可能会问我的block为什么不在主线程中回调，因为有的时候block回调需要可能还有一定的数据处理，在主线程中执行同样会有一定的性能浪费。这一点在第四季和第五季中有强烈的展现。所以，决定权交给您自己。
+
+
+<br/><br/><br/>
+五、模型字段检查，全自动增加字段
+==========
+<br/>
+有时候你可能有这样的需求，开发到一定阶段或者版本，需要增加模型字段。CoreModel已经完全为您考虑了这种情况，下面我们修改Person模型，增加一个Height字段，结果如下：
+
+    @interface Person : CoreModel
+    
+    @property (nonatomic,copy) NSString *name;
+    
+    @property (nonatomic,assign) NSInteger age;
+    
+    @property (nonatomic,assign) CGFloat height;
+    
+    @end
+ 
+ ,此时我们再向Person发送任意消息，并查看控制台输出：
+ 
+    2015-09-09 11:06:47.269 CoreModel[3474:3903] 注意：模型 Person 有新增加的字段 height,已经实时添加到数据库中！
+    
+,我们打开数据库查看表结构：
+
+    sqlite> PRAGMA table_info (Person);
+    +------+--------+---------+---------+------------+------+
+    | cid  | name   | type    | notnull | dflt_value | pk   |
+    +------+--------+---------+---------+------------+------+
+    | 0    | id     | INTEGER | 1       | 0          | 1    |
+    | 1    | name   | TEXT    | 1       | ''         | 0    |
+    | 2    | age    | INTEGER | 1       | 0          | 0    |
+    | 3    | hostID | INTEGER | 1       | 0          | 0    |
+    | 4    | pModel | TEXT    | 1       | ''         | 0    |
+    | 5    | pid    | INTEGER | 1       | 0          | 0    |
+    | 6    | height | REAL    | 1       | 0.0        | 0    |
+    +------+--------+---------+---------+------------+------+
+    7 rows in set (0.04 sec)
+
+我们发现，字段已经成功增加。
+
+##### 你可能会问，如果我想删除一个属性，框架会自动删除字段吗？答案是否定的，原因有以下：
+
+>(1). 如果删除字段，之前的有关此字段的数据全部丢失，如果你后期又想使用此字段，就造成了遗憾。<br/>
+>(2). Sqlite 3本身无删除字段语法，有技术可以实现，但对有大量数据的表来说有极大的操作风险。<br/>
+
+
+<br/><br/><br/>
+五、断言
+==========
+<br/>
+##### 本功能请参考项目中：Test3VC.m
+#### 为了让您正确的使用CoreModel，框架做了大量的断言帮助您正确的使用，最容易出现的错误就是对HostID认识不够深刻，假如您的模型没有设置HostID，会触发断言：
+
+    NSAssert(coreModel.hostID > 0, @"错误：数据插入失败,无hostID的数据插入都是耍流氓，你必须设置模型的模型hostID!");
+
+此外，以下不合法操作均会触发断言：
+>(1). 模型混用，比如使用Cat类方法对Person执行数据操作如[Cat insert:person resBlock:nil];<br/>
+>(2). 数组支持中，数组申明OC数组成员为NSInteger、CGFloat、Bool等（后面会有详细介绍）。<br/>
+
+
+注意：
+
+>(1). HostID是对应服务器表的主键，在CoreModel中hostID会自动映射解析服务器json里面的id字段，你无需手动映射。<br/>
+>(2). 有的朋友issue我说，他们服务器没有返回id主键，可不可以不传hostID？首先服务器数据如果涉及缓存，不传id本身就不是很规范，再者本地缓存数据是不可信任的，只有服务器的数据才是最可靠的，即是CoreModel的最核心的就是hostID，同时在第四季与第五季中，各种强大的功能全部是基于hostID完成，如果您的数据没有hostID或者是您自己手动保存的缓存数据，请结合CoreFMDDB的CountTable功能构建hostID。<br/>
+
+
+
+<br/><br/><br/>
+六、基本模型 + 单条数据插入
+==========
+<br/>
+
+#### 我们构建合法的Person对象，并执行Insert操作：
+##### 本功能请参考项目中：Test4VC.m
+
+    Person *person = [[Person alloc] init];
+    person.hostID = 1;
+    person.name = @"冯成林";
+    person.age = 28;
+    person.height = 174.0;
+    /** Insert */
+    [Person insert:person resBlock:^(BOOL res) {
+        [self show:res];
+    }];
+
+，运行结果提示成功，并且控制台输出全部是在子线程中完成，我们查看数据库：
+
+    sqlite> select * from Person;
+    +----+-----------+-----+--------+--------+-----+--------+
+    | id | name      | age | hostID | pModel | pid | height |
+    +----+-----------+-----+--------+--------+-----+--------+
+    | 1  | 冯成林    | 28  | 1      |        | 0   | 174.0  |
+    +----+-----------+-----+--------+--------+-----+--------+
+    1 rows in set (0.05 sec)
+
+##### 注： 当你再次运行Test4VC.m，会发现提示失败，那是因为hostID为1的数据已经存在，
+
+    错误：Person表中hostID=1的数据记录已经存在！
+    
+你也可以通过查看控制台,能够看到上面的Debug输出，明白这是合理的。
+
+
+<br/><br/><br/>
+七、基本模型 + 批量数据插入
+==========
+<br/>
+##### 本功能请参考项目中：Test5VC.m
+
+    Person *p1 = [[Person alloc] init];
+    p1.hostID = 2;
+    p1.name = @"jack";
+    p1.age = 25;
+    p1.height = 180;
+    
+    Person *p2 = [[Person alloc] init];
+    p2.hostID = 3;
+    p2.name = @"jim";
+    p2.age = 22;
+    p2.height = 172;
+    
+
+    [Person inserts:@[p1,p2] resBlock:^(BOOL res) {
+        [self show:res];
+    }];
+
+#### 提示成功，数据库返回结果如下：
+
+    sqlite> select * from Person;
+    +----+-----------+-----+--------+--------+--------+-----+
+    | id | name      | age | height | hostID | pModel | pid |
+    +----+-----------+-----+--------+--------+--------+-----+
+    | 1  | 冯成林    | 28  | 174.0  | 1      |        | 0   |
+    | 2  | jack      | 25  | 180.0  | 2      |        | 0   |
+    | 3  | jim       | 22  | 172.0  | 3      |        | 0   |
+    +----+-----------+-----+--------+--------+--------+-----+
+    3 rows in set (0.01 sec)
+
+
+<br/><br/><br/>
+八、基本模型 + 单条数据修改
+==========
+<br/>
+##### 本功能请参考项目中：Test6VC.m
+##### 这里我修改了我的姓名和身高字段值，请注意前后对比：
+
+    Person *person = [[Person alloc] init];
+    person.hostID = 1;
+    person.name = @"Charlin Feng";
+    person.age = 28;
+    person.height = 173.5;
+    [Person update:person resBlock:^(BOOL res) {
+        [self show:res];
+    }];
+
+#### 执行结果：
+
+    sqlite> select * from Person;
+    +----+--------------+-----+--------+--------+--------+-----+
+    | id | name         | age | height | hostID | pModel | pid |
+    +----+--------------+-----+--------+--------+--------+-----+
+    | 1  | Charlin Feng | 28  | 173.5  | 1      |        | 0   |
+    | 2  | jack         | 25  | 180.0  | 2      |        | 0   |
+    | 3  | jim          | 22  | 172.0  | 3      |        | 0   |
+    +----+--------------+-----+--------+--------+--------+-----+
+    3 rows in set (0.01 sec)
+
+
+
+<br/><br/><br/>
+九、基本模型 + 批量数据修改
+==========
+<br/>
+##### 本功能请参考项目中：Test7VC.m
+##### 这里我修改了姓名字段值，请注意前后对比：
+
+    Person *p1 = [[Person alloc] init];
+    p1.hostID = 2;
+    p1.name = @"杰克";
+    p1.age = 25;
+    p1.height = 180;
+    Person *p2 = [[Person alloc] init];
+    p2.hostID = 3;
+    p2.name = @"吉姆";
+    p2.age = 22;
+    p2.height = 172;
+    [Person updateModels:@[p1,p2] resBlock:^(BOOL res) {
+        [self show:res];
+    }];
+
+#### 执行结果：
+
+    sqlite> select * from Person;
+    +----+--------------+-----+--------+--------+--------+-----+
+    | id | name         | age | height | hostID | pModel | pid |
+    +----+--------------+-----+--------+--------+--------+-----+
+    | 1  | Charlin Feng | 28  | 173.5  | 1      |        | 0   |
+    | 2  | 杰克         | 25  | 180.0  | 2      |        | 0   |
+    | 3  | 吉姆         | 22  | 172.0  | 3      |        | 0   |
+    +----+--------------+-----+--------+--------+--------+-----+
+    3 rows in set (0.01 sec)
+
+
+<br/><br/><br/>
+十、基本模型 + 单条数据保存
+==========
+<br/>
+##### 本功能请参考项目中：Test8VC.m
+#### 请注意数据保存(Save) 和数据插入(Insert)是有区别的
+##### Insert是简单的数据插入，如果数据存在要么抛出错误，要不返回不处理
+##### Save是指保存数据时，进行智能判断，如果数据记录不存在，执行Insert操作。如果数据已经存在，执行Update操作，总之，执行Save操作后，你指定的数据一定会作为最新数据记录在数据库中。
+
+模型数据：修改了名称与年龄，请注意前后比对：
+
+    Person *p1 = [[Person alloc] init];
+    p1.hostID = 2;
+    p1.name = @"杰克先生";
+    p1.age = 40;
+    p1.height = 180;
+    Person *p2 = [[Person alloc] init];
+    p2.hostID = 3;
+    p2.name = @"吉姆先生";
+    p2.age = 38;
+    p2.height = 172;
+    [Person saveModels:@[p1,p2] resBlock:^(BOOL res) {
+        [self show:res];
+    }];
+
+#### 执行结果：
+
+    sqlite> select * from Person;
+    +----+--------------+-----+--------+--------+--------+-----+
+    | id | name         | age | height | hostID | pModel | pid |
+    +----+--------------+-----+--------+--------+--------+-----+
+    | 1  | Charlin Feng | 28  | 173.5  | 1      |        | 0   |
+    | 2  | 杰克先生     | 40  | 180.0  | 2      |        | 0   |
+    | 3  | 吉姆先生     | 38  | 172.0  | 3      |        | 0   |
+    +----+--------------+-----+--------+--------+--------+-----+
+    3 rows in set (0.01 sec)
+<br/>
+注意：
+> (1). 如果是单条数据保存，请使用 `+(void)save:(id)model resBlock:(void(^)(BOOL res))resBlock;`<br/>
+> (2). 如果是批量数据保存，请使用 `+(void)saveModels:(NSArray *)models resBlock:(void(^)(BOOL res))resBlock`<br/>
+> (3). 有一种情况比较特殊，就是你不清楚是单条还是批量（CoreModel内部有遇到此种情况并使用了此方法），请使用 `+(void)saveDirect:(id)obj resBlock:(void(^)(BOOL res))resBlock`<br/>
+> (4). 再次提醒，此方法会导致数据一定写入数据库，和insert与update有区别，请知晓。
+
+
+
+<br/><br/><br/>
+十一、基本模型 + 条件删除
+==========
+<br/>
+##### 本功能请参考项目中：Test9VC.m
+##### 我们删除年龄大于等于40岁的记录：
+
+    [Person deleteWhere:@"age >= 40" resBlock:^(BOOL res) {
+        [self show:res];
+    }];
+
+#### 执行结果，杰克先生因为年龄刚好40岁，所以被删除：
+
+    sqlite> select * from Person;
+    +----+--------------+-----+--------+--------+--------+-----+
+    | id | name         | age | height | hostID | pModel | pid |
+    +----+--------------+-----+--------+--------+--------+-----+
+    | 1  | Charlin Feng | 28  | 173.5  | 1      |        | 0   |
+    | 3  | 吉姆先生     | 38  | 172.0  | 3      |        | 0   |
+    +----+--------------+-----+--------+--------+--------+-----+
+    2 rows in set (0.02 sec)
+
+
+说明：您还可以根据主键一键删除，注意主键指的是hostID，而非本地数据库的主键id。
+
+
+
+
+<br/><br/><br/>
+十二、基本模型 + 条件查询
+==========
+<br/>
+##### 本功能请参考项目中：Test10VC.m
+##### 为了更好的检验数据查询是否成功，CoreModel增加了description方法,直接打印即可。
+
+    [Person selectWhere:nil groupBy:nil orderBy:nil limit:nil selectResultsBlock:^(NSArray *selectResults) {
+        
+        NSLog(@"%@",selectResults);
+    }];
+    
+#### 执行结果，  
+
+    2015-09-09 14:52:18.806 CoreModel[5335:3a03] (
+        "[Person]<0x7c199670>: 
+          name: Charlin Feng, 
+          age: 28, 
+          height: 173.5, 
+          hostID: 1, 
+          pModel: , 
+          pid: 0, 
+    ",
+        "[Person]<0x7c19a330>: 
+          name: \U5409\U59c6\U5148\U751f, 
+          age: 38, 
+          height: 172, 
+          hostID: 3, 
+          pModel: , 
+          pid: 0, 
+    "
     )
 
-结果集已经成功呈现在我们眼前，这就是一键读取，还是不需要写一句sql。此外你需要注意的是，您的查询条件，是和写真正的sql差不多的
-，比如下面的示例:
-
-    NSArray *users = [User selectWhere:@"hostID<10'" groupBy:@"userName" orderBy:@"id" limit:@"0,5"];
-
-到这里还没有结束，还有级联查询在下面行着您！
+请注意：
+> (1). 因为我们刚刚测试了删除，删除了一条记录，所以现在结果当然是两条。<br/>
+> (2). 框架对CoreModel做了desctiontion自动处理，您能直接看到以上结果。<br/>
+> (3). 和删除类似，您也可以根据hostID(再次提示，非本地数据库id)快速查找一条记录,使用的方法为:`+(void)find:(NSUInteger)hostID selectResultBlock:(void(^)(id selectResult))selectResultBlock;`<br/>
 
 
-<br /><br /><br />
-级联操作
-===============
 
-所有操作都是全自动的，你将不会再看到一条sql。如果你不会sql，那本框架将是您的福音！
+<br/><br/><br/>
+十三、基本模型 + 清空表数据
+==========
+<br/>
+##### 本功能请参考项目中：Test11VC.m
 
-上面其实都是小菜，下面才是重点！！！！
+    [Person truncateTable:^(BOOL res) {
+    }];
 
-级联操作：正如MJExtension所做的，如果一个模型有一个成员变量是另外一个模型，那是多麻烦的事情啊！放心，本框架也已经做了这个处理啦！
+注意：清空了所有表记录，同时重置了本地数据库的主键id，慎用！
 
-为了更好的演示这个情况，我们不用刚刚的User模型，重新来建立两个新的模型：Student（学生）模型、Pen（钢笔）模型且一个学生有一支钢笔。
 
-先来看看类结构吧！
+<br/><br/><br/>
+十四、NSData的支持
+==========
+<br/>
+##### 本功能请参考项目中：Test12VC.m
+框架新增加对NSData的支持,我们需要给Person模型增加一个NSData的属性(当然框架会自动新增字段)：
 
-Student类：
+    @interface Person : CoreModel
+    
+    @property (nonatomic,copy) NSString *name;
+    
+    @property (nonatomic,assign) NSInteger age;
+    
+    @property (nonatomic,assign) CGFloat height;
+    
+    @property (nonatomic,strong) NSData *photoData;
+    
+    @end
 
-        //  Created by 冯成林 on 15/7/2.
-        //  Copyright (c) 2015年 muxi. All rights reserved.
-        //
-        #import <Foundation/Foundation.h>
-        #import "BaseModel.h"
-        #import "Pen.h"
+我们直接使用最普通的方式保存，
+
+    Person *charlin = [[Person alloc] init];
+    charlin.hostID = 1;
+    charlin.name = @"冯成林";
+    charlin.age = 28;
+    charlin.photoData = UIImagePNGRepresentation([UIImage imageNamed:@"1"]);
+    [Person save:charlin resBlock:^(BOOL res) {
+        [self show:res];
+    }];
+
+，然后我们查询数据即可，请注意回调全部是子线程，更新UI请回到主线程：
+
+    __weak typeof(self) weakSelf=self;
+    [Person find:1 selectResultBlock:^(Person *selectResult) {
         
-        typedef enum{
+        [weakSelf show:selectResult != nil];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
             
-            StudentTypeGood=0,
+            weakSelf.imageV.image = [[UIImage alloc] initWithData:selectResult.photoData];
             
-            StudentTypeBad
+            weakSelf.label.text = [NSString stringWithFormat:@"%@%@",selectResult.name,@(selectResult.age)];
+        });
+        
+    }];
+
+<br/><br/><br/>
+十五、属性为单模型级联：数据插入
+==========
+<br/>
+##### 本功能请参考项目中：Test13VC.m
+##### 首先解释标题意思：指的是模型有一个属性是自定义模型，为了演示效果，我们再定义一个City类，且Person有一个属性是城市。
+
+##### 这个是目前的Person模型：
+
+    @interface Person : CoreModel
+    
+    @property (nonatomic,copy) NSString *name;
+    
+    @property (nonatomic,assign) NSInteger age;
+    
+    @property (nonatomic,assign) CGFloat height;
+    
+    @property (nonatomic,strong) NSData *photoData;
+    
+    @property (nonatomic,strong) City *city;
+    
+    @end
+
+
+##### 这个是目前的City模型,请注意你的City模型当然也必须是CoreModel的子类：
+
+    @interface City : CoreModel
+    
+    @property (nonatomic,copy) NSString *cityName;
+    
+    @property (nonatomic,copy) NSString *spell;
+    
+    @end
+
+下面我们构建数据，执行如下数据并执行级联添加：
+
+    City *city = [[City alloc] init];
+    city.hostID = 1;
+    city.cityName = @"成都";
+    city.spell = @"ChengDu";
+    Person *p5 = [[Person alloc] init];
+    p5.hostID=5;
+    p5.name = @"张三";
+    p5.city=city;
+    [Person insert:p5 resBlock:^(BOOL res) {
+        [self show:res];
+    }];
+    
+#### 执行成功，我们查询结果检验：
+
+    sqlite> select * from Person;
+    +----+--------+-----+--------+-----------+--------+--------+-----+
+    | id | name   | age | height | photoData | hostID | pModel | pid |
+    +----+--------+-----+--------+-----------+--------+--------+-----+
+    | 1  | 张三   | 0   | 0.0    |           | 5      |        | 0   |
+    +----+--------+-----+--------+-----------+--------+--------+-----+
+    1 rows in set (0.01 sec)
+    
+    
+    sqlite> select * from City;
+    +----+----------+---------+--------+-----------+-----+
+    | id | cityName | spell   | hostID | pModel    | pid |
+    +----+----------+---------+--------+-----------+-----+
+    | 1  | 成都     | ChengDu | 1      | Person    | 5   |
+    +----+----------+---------+--------+-----------+-----+
+    1 rows in set (0.00 sec)
+
+#### 注：子模型的级联还牵扯一个复杂问题就是：Person有一个模型属性正好也是Person类。不过此种情况已经测试，完美支持。
+
+
+#### 注意，由于代码是复用的，级联的CURD是不会有任何问题的，这里不再提供进一步的测试。
+
+
+<br/><br/><br/>
+十六、数组支持：基本类型数组
+==========
+<br/>
+##### 本功能请参考项目中：Test14VC.m
+为了更好的演示本功能，我们再为Person增加一个属性tags，用来表示人的一些标签，请明确，他是字符串数组。
+
+    @property (nonatomic,strong) NSArray *tags;
+
+现在我们来构建模型：
+
+    Person *p = [[Person alloc] init];
+    p.hostID=6;
+    p.name = @"冯成林";
+    p.tags = @[@"工作狂",@"电影迷",@"成都范",@"梦想青年"];
+    [Person save:p resBlock:^(BOOL res) {
+        [self show:res];
+    }];
+
+，我们测试以上代码，发现被断言截获，断言说明如下：
+
+    错误：请在Person类中为您的NSArray类型的tags属性增加说明信息，实现statementForNSArrayProperties静态方法！
+    
+,这个是前面最开始的断言中提到的一种非法使用，当然解决问题的方法很简单，断言也说明的很清楚，您需要告诉CoreModel你的tags数组里面装的是什么类型，实现，格式要求如下：实现statementForNSArrayProperties静态方法，返回一个字典，其实key是数组属性名，value是数组成员的类型字符串，比如此处我们需要在Person类实现方法：
+
+    +(NSDictionary *)statementForNSArrayProperties{
+        return @{@"tags":NSStringFromClass([NSString class])};
+    }
+,有可能您认为您的数组中装的其实是一系列数字，你也许会这样写:
+
+    +(NSDictionary *)statementForNSArrayProperties{
+        return @{@"tags":@"NSInteger"};
+    }
+，这样写，我们直接运行一下，发现同样会触发断言：
+
+    错误：OC数组内不可能存放NSInteger
+
+，就目前来说，服务器给您的的普通数据你直接用NSString来接收就可以了，当然你可能会想写成NSNumber可以不呢？其实我觉得没有这个必要，因为再者转为NSInteger、CGFloat、Double的流程其实是一致的，所以数组里面装的如果是普通数组类型，请直接用NSString来接收。
+
+我们还是来看看数据库里面存放结果：
+
+    sqlite> select * from Person;
+    +----+-----------+-----+--------+-----------+--------+--------+-----+--------------------------------------------+
+    | id | name      | age | height | photoData | hostID | pModel | pid | tags                                       |
+    +----+-----------+-----+--------+-----------+--------+--------+-----+--------------------------------------------+
+    | 1  | 张三      | 0   | 0.0    |           | 5      |        | 0   |                                            |
+    | 2  | 冯成林    | 0   | 0.0    |           | 6      |        | 0   | 工作狂,电影迷,成都范,梦想青年 |
+    +----+-----------+-----+--------+-----------+--------+--------+-----+--------------------------------------------+
+    2 rows in set (0.02 sec)
+
+
+最后，有朋友会问，
+数组里面装装的如果是字典怎么办？这点上，在面向对象开发，字典一定是可以转为模型的。不建议继续玩字典。
+数组里面装的如果是数组怎么办？转为NSData操作
+关于数组里面装的是NSData和自定义模型，下面马上为您呈现。
+
+
+
+<br/><br/><br/>
+十七、数组支持：NSData类型数组
+==========
+<br/>
+##### 本功能请参考项目中：Test15VC.m
+首先，我们增加字段,请明确字段数组里面放的是NSData数据类型:
+
+    @property (nonatomic,strong) NSArray *dreams;
+
+,然后我们需要申明dreams数组内存放的是什么数据类型：
+
+    +(NSDictionary *)statementForNSArrayProperties{
+        return @{@"tags":NSStringFromClass([NSString class]),@"dreams":NSStringFromClass([NSData class])};
+    }
+
+，好了，下面我们开始构建数据：
+
+    Person *p = [[Person alloc] init];
+    p.hostID=7;
+    p.name = @"大雄";
+    p.dreams = @[
+                 [self dataWithImageName:@"p1"],
+                 [self dataWithImageName:@"p2"],
+                 [self dataWithImageName:@"p3"],
+                 ];
+    [Person save:p resBlock:^(BOOL res) {
+        [self show:res];
+    }];
+
+，保存结果请参考框架`数组支持：NSData类型数组`演示效果。
+
+
+
+<br/><br/><br/>
+十八、数组支持：自定义模型数组
+==========
+<br/>
+##### 本功能请参考项目中：Test16VC.m
+为了演示本功能，我们新增Pen模型，并在Person模型中新增pens属性：
+
+##### Pen模型
+
+    @interface Pen : CoreModel
+    
+    @property (nonatomic,copy) NSString *color;
+    
+    @property (nonatomic,assign) CGFloat price;
+    
+    @end
+
+##### Person中新增pens属性：
+
+    @property (nonatomic,strong) NSArray *pens;
+
+，当然你不能忘记申明pens里面放的是什么数据类型：
+
+    +(NSDictionary *)statementForNSArrayProperties{
+        return @{@"tags":NSStringFromClass([NSString class]),@"dreams":NSStringFromClass([NSData class]),@"pens":NSStringFromClass([Pen class])};
+    }
+
+，下面我们构建模型数据，并执行保存操作：
+
+    Pen *pen1=[[Pen alloc] init];
+    pen1.hostID=1;
+    pen1.color = @"red";
+    pen1.price = 12.5;
+    Pen *pen2=[[Pen alloc] init];
+    pen2.hostID=1;
+    pen2.color = @"blue";
+    pen2.price = 9.8;
+    Person *p = [[Person alloc] init];
+    p.hostID = 8;
+    p.name = @"静香";
+    p.pens=@[pen1,pen2];
+    [Person save:p resBlock:^(BOOL res) {
+        [self show:res];
+    }];
+
+，执行成功，我们看看数据库里面的保存记录：
+
+sqlite> select * from Person;
++----+--------+-----+--------+-----------+------+--------+--------+--------+-----+
+| id | name   | age | height | photoData | tags | dreams | hostID | pModel | pid |
++----+--------+-----+--------+-----------+------+--------+--------+--------+-----+
+| 1  | 静香   | 0   | 0.0    |           |      |        | 8      |        | 0   |
++----+--------+-----+--------+-----------+------+--------+--------+--------+-----+
+1 rows in set (0.01 sec)
+
+sqlite> select * from Pen;
++----+-------+-------+--------+--------+-----+
+| id | color | price | hostID | pModel | pid |
++----+-------+-------+--------+--------+-----+
+| 1  | red   | 12.5  | 1      | Person | 8   |
+| 2  | blue  | 9.8   | 1      | Person | 8   |
++----+-------+-------+--------+--------+-----+
+2 rows in set (0.01 sec)
+
+
+<br/><br/><br/>
+十九、综合实战：网络数据一键CURD
+==========
+<br/>
+##### 本功能请参考项目中：Test17VC.m
+#####为了演示本功能，我为大家准备了一个测试接口，我们所有准备已经做好，直接开工：
+#### 注意：本例是CoreModel最正经的用法，也是我写本框架的最直接的目的所在：
+#### 本例是自定义模型属性数组支持与子模型级联的综合演示：
+
+    NSString *url = @"http://211.149.151.92/mytest/Test/test3";
+    CoreSVPLoading(@"加载中", YES)
+    [CoreHttp getUrl:url params:nil success:^(NSDictionary *dict) {
+        
+        Person *p = [Person objectWithKeyValues:dict[@"data"][@"dataData"][@"person"]];
+        
+        [Person save:p resBlock:^(BOOL res) {
             
-        }StudentType;
+            [self show:res];
+        }];
         
-        
-        @interface Student : BaseModel
-        
-        @property (nonatomic,copy) NSString *name;
-        
-        @property (nonatomic,assign) NSInteger childNum;
-        
-        @property (nonatomic,assign) float height;
-        
-        @property (nonatomic,assign) double earn;
-        
-        @property (nonatomic,assign) BOOL isMan;
-        
-        @property (nonatomic,assign) StudentType type;
-        
-        @property (nonatomic,assign) NSUInteger age;
-        
-        @property (nonatomic,strong) Pen *pen;
-        
-        @property (nonatomic,assign) int count;
-        
-        @property (nonatomic,assign) CGFloat money;
-        
-        @end
+    } errorBlock:nil];
 
+，处理成功，我们来看看表记录：
 
-钢笔类：
-
-        //  Created by 冯成林 on 15/7/2.
-        //  Copyright (c) 2015年 muxi. All rights reserved.
-        //
-        
-        #import "BaseModel.h"
-        #import <UIKit/UIKit.h>
-        
-        
-        
-        @interface Pen : BaseModel
-        
-        @property (nonatomic,copy) NSString *brandName;
-        
-        @property (nonatomic,assign) NSUInteger usageYear;
-        
-        @property (nonatomic,assign) CGFloat price;
-        
-        @end
-
-
-建立好了模型，我们先来初始化使用一下吧：
-
-    Pen *pen = [[Pen alloc] init];
-    Student *stu = [[Student alloc] init];
-    stu.pen =pen;
-
-还是和刚刚一样，什么都没做，我们直接运行一下吧，看看会怎么样？？？
-运行成功，查看控制台输出：
-
-    2015-07-02 16:56:47.141 CoreClass[5736:607] dbPath:/Users/Charlin/Library/Developer/CoreSimulator/Devices/E1B1C2D8-DC98-4571-AF45-8A6D76F07497/data/Applications/985C6FAD-E454-4581-B312-07F998EBC490/Documents/CoreClass/CoreClass.sql
-    2015-07-02 16:56:47.144 CoreClass[5736:607] 表创建完毕<NSThread: 0x79726820>{name = (null), num = 1}
-    2015-07-02 16:56:47.145 CoreClass[5736:607] 字段也检查完毕<NSThread: 0x79726820>{name = (null), num = 1}
-    2015-07-02 16:56:47.147 CoreClass[5736:607] 表创建完毕<NSThread: 0x79726820>{name = (null), num = 1}
-    2015-07-02 16:56:47.147 CoreClass[5736:607] 字段也检查完毕<NSThread: 0x79726820>{name = (null), num = 1}
-
-好像好了？不可能吧，看看数据库里面都有什么了?
-
-    sqlite> select name from sqlite_master where type="table";
-    +-----------------+
-    | name            |
-    +-----------------+
-    | Pen             |
-    | sqlite_sequence |
-    | Student         |
-    +-----------------+
-    3 rows in set (0.01 sec)
+    sqlite> select * from Person;
+    +----+--------+-----+--------+-----------+------+--------+--------+--------+-----+
+    | id | name   | age | height | photoData | tags | dreams | hostID | pModel | pid |
+    +----+--------+-----+--------+-----------+------+--------+--------+--------+-----+
+    | 1  | 张三   | 18  | 185.0  |           |      |        | 100    |        | 0   |
+    +----+--------+-----+--------+-----------+------+--------+--------+--------+-----+
+    1 rows in set (0.00 sec)
     
-我们看到，表已经创建好了，而且是级联哦。
-
-分别来看看各自的表结构是否正确？
+    sqlite> select * from City;
+    +----+----------+---------+--------+--------+-----+
+    | id | cityName | spell   | hostID | pModel | pid |
+    +----+----------+---------+--------+--------+-----+
+    | 1  | 成都   | ChengDu | 100    | Person | 100 |
+    +----+----------+---------+--------+--------+-----+
+    1 rows in set (0.00 sec)
     
-Student表：
-
-    sqlite> PRAGMA table_info (Student);
-    +------+----------+---------+---------+------------+------+
-    | cid  | name     | type    | notnull | dflt_value | pk   |
-    +------+----------+---------+---------+------------+------+
-    | 0    | id       | INTEGER | 1       | 0          | 1    |
-    | 1    | name     | TEXT    | 1       | ''         | 0    |
-    | 2    | childNum | INTEGER | 1       | 0          | 0    |
-    | 3    | height   | REAL    | 1       | 0.0        | 0    |
-    | 4    | earn     | REAL    | 1       | 0.0        | 0    |
-    | 5    | isMan    | INTEGER | 1       | 0          | 0    |
-    | 6    | type     | INTEGER | 1       | 0          | 0    |
-    | 7    | age      | INTEGER | 1       | 0          | 0    |
-    | 8    | count    | INTEGER | 1       | 0          | 0    |
-    | 9    | money    | REAL    | 1       | 0.0        | 0    |
-    | 10   | hostID   | INTEGER | 1       | 0          | 0    |
-    | 11   | pModel   | TEXT    | 1       | ''         | 0    |
-    | 12   | pid      | INTEGER | 1       | 0          | 0    |
-    +------+----------+---------+---------+------------+------+
-    13 rows in set (0.08 sec)
-
-正确！再看看Pen表
-
-    sqlite> 
-        PRAGMA table_info (Pen);
-        +------+-----------+---------+---------+------------+------+
-        | cid  | name      | type    | notnull | dflt_value | pk   |
-        +------+-----------+---------+---------+------------+------+
-        | 0    | id        | INTEGER | 1       | 0          | 1    |
-        | 1    | brandName | TEXT    | 1       | ''         | 0    |
-        | 2    | usageYear | INTEGER | 1       | 0          | 0    |
-        | 3    | price     | REAL    | 1       | 0.0        | 0    |
-        | 4    | hostID    | INTEGER | 1       | 0          | 0    |
-        | 5    | pModel    | TEXT    | 1       | ''         | 0    |
-        | 6    | pid       | INTEGER | 1       | 0          | 0    |
-        +------+-----------+---------+---------+------------+------+
-        7 rows in set (0.01 sec)
-
-    yes,完成正确！！！！
-    
-迫不及待级联插入数据看看了！！！
-首页，我们来创建两个有数据对象，然后执行数据插入吧！！！切记要传hostID!!!
-
-
-自定义数据如下：
-
-开始：级联插入：
-
-        Pen *pen = [[Pen alloc] init];
-        pen.hostID=1;
-        pen.price = 10;
-        pen.usageYear = 3;
-        pen.brandName = @"国产好铅笔";
-        
-        Student *stu = [[Student alloc] init];
-        stu.hostID=1;
-        stu.name = @"冯成林";
-        stu.pen = pen;
-        stu.money = 8866;
-        
-        //级联插入
-        [Student insert:stu];
-    
-
-查看控制台输出：
-
-        
-        2015-07-02 17:09:20.554 CoreClass[5775:607] 表创建完毕<NSThread: 0x7b77e740>{name = (null), num = 1}
-        2015-07-02 17:09:20.555 CoreClass[5775:607] 字段也检查完毕<NSThread: 0x7b77e740>{name = (null), num = 1}
-        2015-07-02 17:09:20.556 CoreClass[5775:607] 表创建完毕<NSThread: 0x7b77e740>{name = (null), num = 1}
-        2015-07-02 17:09:20.556 CoreClass[5775:607] 字段也检查完毕<NSThread: 0x7b77e740>{name = (null), num = 1}
-        2015-07-02 17:09:20.557 CoreClass[5775:607] 数据插入开始<NSThread: 0x7b77e740>{name = (null), num = 1}
-        2015-07-02 17:09:20.557 CoreClass[5775:607] 查询开始：<NSThread: 0x7b77e740>{name = (null), num = 1}
-        2015-07-02 17:09:20.558 CoreClass[5775:607] 查询完成：<NSThread: 0x7b77e740>{name = (null), num = 1}
-        2015-07-02 17:09:20.558 CoreClass[5775:607] 数据插入开始<NSThread: 0x7b77e740>{name = (null), num = 1}
-        2015-07-02 17:09:20.559 CoreClass[5775:607] 查询开始：<NSThread: 0x7b77e740>{name = (null), num = 1}
-        2015-07-02 17:09:20.559 CoreClass[5775:607] 查询完成：<NSThread: 0x7b77e740>{name = (null), num = 1}
-        2015-07-02 17:09:21.113 CoreClass[5775:607] 数据插入结束<NSThread: 0x7b77e740>{name = (null), num = 1}
-        2015-07-02 17:09:21.115 CoreClass[5775:607] 数据插入结束<NSThread: 0x7b77e740>{name = (null), num = 1}
-
-
-迫不及待的打开数据库，查看Student表：
-
-    sqlite> select * from  Student;
-    +----+-----------+----------+--------+------+-------+------+-----+-------+--------+--------+--------+-----+
-    | id | name      | childNum | height | earn | isMan | type | age | count | money  | hostID | pModel | pid |
-    +----+-----------+----------+--------+------+-------+------+-----+-------+--------+--------+--------+-----+
-    | 1  | 冯成林 | 0        | 0.0    | 0.0  | 0     | 0    | 0   | 0     | 8866.0 | 1      |        | 0   |
-    +----+-----------+----------+--------+------+-------+------+-----+-------+--------+--------+--------+-----+
-    1 rows in set (0.02 sec)
-
-
-YES,成功！！！！ 那个Pen表对应真的自动级联了吗？看看Pen表！！！！马上！！！
-
     sqlite> select * from Pen;
-    +----+-----------------+-----------+-------+--------+---------+-----+
-    | id | brandName       | usageYear | price | hostID | pModel  | pid |
-    +----+-----------------+-----------+-------+--------+---------+-----+
-    | 1  | 国产好铅笔 | 3         | 10.0  | 1      | Student | 1   |
-    +----+-----------------+-----------+-------+--------+---------+-----+
-    1 rows in set (0.02 sec)
+    +----+-------+-------+--------+--------+-----+
+    | id | color | price | hostID | pModel | pid |
+    +----+-------+-------+--------+--------+-----+
+    | 1  | red   | 18.55 | 100    | Person | 100 |
+    | 2  | green | 22.22 | 101    | Person | 100 |
+    +----+-------+-------+--------+--------+-----+
+    2 rows in set (0.06 sec)
 
-celebrate！！！！欢呼！！！！成功！！！！
 
+
+
+
+
+<br/><br/><br/>
+二十、 第四季与第五季预告
+==========
+
+##### 第四季：CoreCache 动态缓存
+##### 第五季：CoreList 列表终结者
 <br/>
-####【更新】级联查询：
-
-刚刚已经为大家演示了如何从单表查询数据，不过多表级联查询是否能够一样一键查询好使到爽爆？？？赶快来试下！
-
-查询之前，我们还是做点准备工作吧，重写Student和Pen的description以备用：
-
-Student重写描述：请注意我在自定义对象Pen的地方做了特别的换行符号
-
-    /** Student描述 */
-    -(NSString *)description{
-        return [NSString stringWithFormat:@"name=%@,childNum=%@,height=%@,earn=%@,isMan=%@,type=%@,age=%@,\r\r\r pen=%@ \r\r\r\r,count=%@,money=%@,",self.name,@(self.childNum),@(self.height),@(self.earn),@(self.isMan),@(self.type),@(self.age),self.pen,@(self.count),@(self.money)];
-    }
-
-Pen重写描述:
-
-    /** 描述 */
-    -(NSString *)description{
-        return [NSString stringWithFormat:@"brandName=%@,usageYear=%@,price=%@",self.brandName,@(self.usageYear),@(self.price)];
-    }
+第三季CoreModel在我看来是一个底层工具，他的核心价值是为CoreCache和CoreList服务，就在CoreModel中你会发现大量的代码是在本季没有提到，请暂时忽略它吧。
 
 
-级联查询，来了，你准备好了吗？
+<br/><br/><br/><br/>
 
-        //查询
-    NSArray *students = [Student selectWhere:nil groupBy:nil orderBy:nil limit:nil];
-    NSLog(@"%@",students);
+#### [成都时点软件开发有限公司](http://ios-android.cn)冯成林原创，因你而精彩！
 
-赶紧看看控制台输出了什么？？？？
-
-    2015-07-03 15:54:30.612 CoreClass[4588:607] 表创建完毕<NSThread: 0x7892dd60>{name = (null), num = 1}
-    2015-07-03 15:54:30.613 CoreClass[4588:607] 字段也检查完毕<NSThread: 0x7892dd60>{name = (null), num = 1}
-    2015-07-03 15:54:30.613 CoreClass[4588:607] 表创建完毕<NSThread: 0x7892dd60>{name = (null), num = 1}
-    2015-07-03 15:54:30.614 CoreClass[4588:607] 字段也检查完毕<NSThread: 0x7892dd60>{name = (null), num = 1}
-    2015-07-03 15:54:30.614 CoreClass[4588:607] 查询开始：<NSThread: 0x7892dd60>{name = (null), num = 1}
-    2015-07-03 15:54:30.615 CoreClass[4588:607] 查询开始：<NSThread: 0x7892dd60>{name = (null), num = 1}
-    2015-07-03 15:54:30.615 CoreClass[4588:607] 查询完成：<NSThread: 0x7892dd60>{name = (null), num = 1}
-    2015-07-03 15:54:30.616 CoreClass[4588:607] 查询完成：<NSThread: 0x7892dd60>{name = (null), num = 1}
-    2015-07-03 15:54:30.616 CoreClass[4588:607] (
-        "name=\U51af\U6210\U6797,childNum=0,height=0,earn=0,isMan=0,type=0,age=0,
-        
-        
-        
-         pen=brandName=\U56fd\U4ea7\U597d\U94c5\U7b14,usageYear=3,price=10 
-        
-        
-        
-        ,count=0,money=8866,"
-        )
-
-
+#### 支持时点软件发展（公司前期做全国APP外包），为时点提供业务资源与信息，我们感激不尽！！
 <br/>
-
-####来个彩蛋吧！！！！
-你是否发现一个方法？就在CoreModel中？
-
-    /** 读取 */
-    /** 目前是不考虑上拉下拉刷新 */
-    /** 不论是本地查询还是网络请求，均是延时操作，返回block均在子线程中 */
-    +(void)selectWithParams:(NSDictionary *)params userInfo:(NSDictionary *)userInfo beginBlock:(void(^)(BOOL isNetWorkRequest,BOOL needHUD))beginBlock successBlock:(void(^)(NSArray *models,BaseModelDataSourceType sourceType,NSDictionary *userInfo))successBlock errorBlock:(void(^)(NSString *errorResult,NSDictionary *userInfo))errorBlock;
-
-CoreModel第四季动态缓存会让你爽翻的！！！请star本框架！加入组织持续关注吧！！！
-
-
-<br/>
-####到此，一切都安静了！！！
-
-
-<br /><br /><br />
-
-结束语： OVER
-===============
-到了这里，一键ORM第三季暂时告一段落了！！！但是远远还没有结束！！！
-BaseModel里面还有非常多的强大特性还没有介绍！ 如果你支持我！请支持CoreClass,让更多的人看到，用到。
-我和您一样期待分享CoreModel第四季！！！！！！
-
-谢谢！再见！！
-
-
-
-
-<br /><br />
-
-
-致谢 THANKS
-===============
-#####1.感谢MJ    Thanks MJ!
-![image](https://github.com/nsdictionary/CoreFMDB/blob/master/CoreFMDB/3.png)<br />
-感谢杰哥！致敬MJExtension！希望大家支持杰哥的事业！ <br />
-
-小码哥IT教育：http://www.520it.com
-
- <br /> <br />
-#####2.感谢小饭   Thanks XiaoFan!
-
-![image](https://github.com/nsdictionary/CoreFMDB/blob/master/CoreFMDB/4.png)<br />
- 感谢小饭提供的英文翻译帮助，谢谢！
-<br /> <br /><br />
+[![image](https://github.com/CharlinFeng/Resource/blob/master/ShiDian/shidian.png)](http://ios-android.cn)<br/><br/>
 
